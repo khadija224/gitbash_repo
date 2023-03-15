@@ -5,8 +5,8 @@
   vars:
      smtp_host: smtp.gmail.com
      smtp_port: 587
-     smtp_user: khadijairshad52@gmail.com
-     smtp_password: pvtnmntjbuhwgwre
+     smtp_user: email@gmail.com
+     smtp_password: password
      smtp_tls: no
      ansible_python_interpreter: /usr/bin/python3
      smtp_timeout: 30
