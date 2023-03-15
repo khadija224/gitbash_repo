@@ -1,0 +1,25 @@
+---
+- name: Sending email before patching starts
+  hosts: 172.31.0.107
+  connection: local
+  vars:
+     smtp_host: smtp.gmail.com
+     smtp_port: 587
+     smtp_user: khadijairshad52@gmail.com
+     smtp_password: pvtnmntjbuhwgwre
+     smtp_tls: no
+     ansible_python_interpreter: /usr/bin/python3
+     smtp_timeout: 30
+  tasks:
+    - name: Send email before patching starts
+      mail:
+        host: "{{ smtp_host }}"
+        port: "{{ 587 }}"
+        username: "{{ smtp_user }}"
+        password: "{{ smtp_password }}"
+        to: "{{ smtp_user }}"
+        subject: "Patching will start soon"
+        body: "We are begining patching our servers."
+    - name: Print message if task run successfully
+      ansible.builtin.debug:
+        msg: "Task have been sucessfully completed"
